@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>แปลงข้อความลูกค้า</title>
+  <style>
+    body { font-family: 'Sarabun', sans-serif; background: #f0f4f8; padding: 2rem; margin: 0; }
+    .container { max-width: 750px; background: white; padding: 2rem; margin: auto; border-radius: 12px;
+                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
+    h2 { text-align: center; color: #2c3e50; margin-bottom: 1rem; }
+    label { display: block; margin-top: 1rem; font-weight: bold; color: #34495e; }
+    select, textarea { width: 100%; padding: 12px; margin-top: 0.5rem; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; }
+    .btn { padding: 10px 20px; margin-top: 1rem; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer; }
+    .green { background-color: #27ae60; color: white; }
+    .red { background-color: #c0392b; color: white; }
+    .blue { background-color: #2980b9; color: white; }
+    .output-box { background: #ecf0f1; padding: 1rem; border-radius: 6px; white-space: pre-line; margin-top: 1rem; border: 1px dashed #bbb; font-family: 'Courier New', monospace; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>📦 แปลงข้อความลูกค้า (DropList + เขต/แขวง)</h2>
+
+    <label>เลือกสินค้า:</label>
+    <select id="productLine">
+      <option value="">-- เลือกรายการสินค้า --</option>
+      <option value="เจลสมุนไพรแก้ปวด Dr.YuTitan 1 แถม 2 / 50ml. / 1 / 0">เจลสมุนไพร Dr.YuTitan 1 แถม 2</option>
+      <option value="เจลสมุนไพรแก้ปวด Dr.YuTitan 2 แถม 4 / 50ml. / 1 / 0">เจลสมุนไพร Dr.YuTitan 2 แถม 4</option>
+      <option value="เจลสมุนไพรแก้ปวด Dr.YuTitan 3 แถม 6 / 50ml. / 1 / 0">เจลสมุนไพร Dr.YuTitan 3 แถม 6</option>
+      <option value="Kreain Nature เจลนวดแก้ปวด 1 แถม 1 / 100ml. / 1 / 0">Kreain Nature 1 แถม 1</option>
+      <option value="Kreain Nature เจลนวดแก้ปวด 2 แถม 2 / 100ml. / 1 / 0">Kreain Nature 2 แถม 2</option>
+      <option value="Kreain Nature เจลนวดแก้ปวด 3 แถม 3 / 100ml. / 1 / 0">Kreain Nature 3 แถม 3</option>
+    </select>
+
+    <label>เลือกเพจ:</label>
+    <select id="pageLine">
+      <option value="">-- เลือกเพจสินค้า --</option>
+      <option value="Kreain Nature ผู้ช่วยแก้ปวดข้อ">Kreain Nature ผู้ช่วยแก้ปวดข้อ</option>
+      <option value="เจลสมุนไพรแก้ปวดเรื้อรัง Dr.YuTitan">เจลสมุนไพรแก้ปวดเรื้อรัง Dr.YuTitan</option>
+    </select>
+
+    <label>วางข้อความลูกค้า:</label>
+    <textarea id="inputText" rows="10" placeholder="วางข้อความ..."></textarea>
+
+    <button class="btn green" onclick="transformText()">แปลงข้อความ</button>
+    <button class="btn red" onclick="resetForm()">ล้าง</button>
+
+    <div class="output-box" id="outputText">📋 ผลลัพธ์จะแสดงที่นี่...</div>
+    <button class="btn blue" onclick="copyText()">📋 คัดลอกผลลัพธ์</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
